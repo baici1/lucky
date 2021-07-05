@@ -1,12 +1,21 @@
 <template>
   <div class="container">
-    week
+    Week
   </div>
 </template>
 
 <script>
+import getData from "@/services/index"
+import { useStore } from 'vuex'
+import { onMounted } from 'vue'
 export default {
-
+  name: 'week',
+  setup () {
+    const store = useStore()
+    onMounted(() => {
+      getData(store)
+    })
+  }
 }
 </script>
 

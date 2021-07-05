@@ -3,9 +3,5 @@ import state from './state'
 import mutations from './mutations'
 export default createStore({
   state,
-  mutations,
-  actions: {
-  },
-  modules: {
-  }
+  mutations
 })

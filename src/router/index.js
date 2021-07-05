@@ -1,12 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import TodayPage from '@/views/Today';
+import { createRouter, createWebHistory } from 'vue-router'
+import TodayPage from '@/views/Today'
 const routes = [
-  //配置路由
+  // 配置路由
   { path: '/', component: TodayPage, name: 'today' },
   {
     path: '/tomorrow',
     component: () => import('../views/Tomorrow.vue'),
-    name: 'tomorrow',
+    name: 'tomorrow'
   },
   {
     path: '/week',
@@ -21,13 +21,13 @@ const routes = [
   {
     path: '/month',
     component: () => import('../views/Month.vue'),
-    name: 'month',
-  },
-];
+    name: 'month'
+  }
+]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router
