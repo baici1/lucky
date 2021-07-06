@@ -24,6 +24,7 @@ import navData from '@/datas/nav'
 import NavItem from './item.vue'
 import { ref } from '@vue/reactivity'
 import { useStore } from 'vuex'
+import getData from "@/services/index"
 export default {
   name: "NavBar",
   components: {
@@ -35,6 +36,7 @@ export default {
     function barclick (index) {
       curIdx.value = index
       store.commit('setConsName', navData[index])
+      getData(store)
       //console.log(store.state.consName)
     }
     return {

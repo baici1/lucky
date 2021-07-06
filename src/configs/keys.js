@@ -1,4 +1,4 @@
-const JUHE_KEY = "6dfee1755f8faabc0076315d64b704d7"
+const JUHE_KEY = "1d74cd347b169ba4422176ad1350f3b2"
 export {
   JUHE_KEY
 }

@@ -2,8 +2,10 @@
   <div class="app">
     <headerpage>星座物语</headerpage>
     <nav-bar></nav-bar>
+    <Error></Error>
     <!-- 当切换页面同时缓存组件 -->
-    <router-view v-slot="{Component}">
+    <router-view v-slot="{Component}"
+                 v-if="!errorCode">
       <keep-alive>
         <component :is="Component"></component>
       </keep-alive>
@@ -19,13 +21,15 @@ import NavBar from '@/components/NavBar'
 import Tab from '@/components/Tab'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
-import { watch } from '@vue/runtime-core'
+import { computed, watch } from '@vue/runtime-core'
+import Error from '@/components/Error'
 export default {
   name: "App",
   components: {
     Tab,
     Headerpage,
-    NavBar
+    NavBar,
+    Error
   },
   setup () {
     const store = useStore()
@@ -43,6 +47,9 @@ export default {
     }, (value) => {
       store.commit('setField', value)
     })
+    return {
+      errorCode: computed(() => store.state.errorCode)
+    }
   }
 }
 </script>

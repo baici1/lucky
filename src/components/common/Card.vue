@@ -4,7 +4,7 @@
       <img :src="require(`../../assets/img/${name || '白羊座'}.jpg`)"
            alt="name">
       <div class="mask">
-        <h1>{{name ||'白羊座'}}</h1>
+        <h1>{{name }}</h1>
         <p v-if="allIndex">综合指数：{{allIndex || 0}}</p>
       </div>
     </div>
