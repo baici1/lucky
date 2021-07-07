@@ -9,5 +9,5 @@ export default async (store) => {
     store.commit('setErrorCode', data.error_code)
     return
   }
-  store.commit('setData', data)
+  store.commit('setData', data.result)
 }
