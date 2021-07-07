@@ -1,7 +1,7 @@
 <template>
   <div class="list">
     <cons-item title="本周日期"
-               :content="data.datetime"></cons-item>
+               :content="data.date"></cons-item>
     <Summary field="工作"
              :content="data.work"></Summary>
     <Summary field="恋爱"
